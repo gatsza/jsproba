@@ -1,5 +1,5 @@
 var stompClient = null;
-
+// connect();
 function connect() {
   var socket = new SockJS('/gs-guide-websocket');
   stompClient = Stomp.over(socket);
@@ -20,6 +20,7 @@ function disconnect() {
 
 function sendName() {
   stompClient.send("/app/receive", {}, JSON.stringify({'text': $("#field").val()}));
+  $("#field").val('')
 }
 
 function showGreeting(message) {
