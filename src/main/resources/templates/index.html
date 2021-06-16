@@ -22,7 +22,7 @@
   </thead>
   <tbody id="fields">
   <tr th:each="data: ${datas}" >
-    <td th:text="${data}" />
+    <td th:text="${data.getText()}" />
   </tr>
   </tbody>
 </table>
